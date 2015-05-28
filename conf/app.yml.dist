@@ -1,0 +1,4 @@
+logger:
+  logpath: /var/log/api-server.log
+  instanceidentifier: api-server
+  level: 400

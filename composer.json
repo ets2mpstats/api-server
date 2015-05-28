@@ -1,0 +1,26 @@
+{
+    "name": "ets2mpstats/api-server",
+    "description": "Backend for ETS 2 MP Stats' API Server",
+    "type": "project",
+    "require": {
+        "symfony/yaml": "^2.7@beta",
+        "klein/klein": "^2.1",
+        "monolog/monolog": "^1.13",
+        "gabordemooij/redbean": "^4.2",
+        "symfony/css-selector": "^2.7@beta",
+        "facebook/php-sdk-v4": "^4.0",
+        "nesbot/carbon": "^1.19",
+        "dg/rss-php": "^1.1",
+        "rmccue/requests": "^1.6",
+        "league/commonmark": "^0.8.0",
+        "league/climate": "^3.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thor Erik Lie",
+            "email": "thor@thorerik.com"
+        }
+    ],
+    "minimum-stability": "beta"
+}
