@@ -5,4 +5,6 @@ $loader->add('ApiServer', __DIR__.'/../src/');
 
 use \ApiServer\ApiServer;
 
-$app = new ApiServer();
+$app = new ApiServer(
+  array('etr')
+  );

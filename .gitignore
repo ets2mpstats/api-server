@@ -2,6 +2,7 @@
 /conf/app.yml
 # default log file when developing
 /api-server.log
+/.vagrant
 
 # Created by https://www.gitignore.io
 

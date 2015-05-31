@@ -43,17 +43,21 @@ class ApiServer {
             $this->config['logger']['level'])
         );
         ErrorHandler::register($this->logger);
+        $this->logger->addDebug('Logger initialized');
     }
 
     private function setupDatabase() {
+      $this->logger->addDebug('Setting up ORM');
         \RedBeanPHP\R::setup(
             'mysql:host=' . $this->config['database']['host'] . ';dbname=' . $this->config['database']['name'],
             $this->config['database']['user'],
             $this->config['database']['pass']
         );
+      $this->logger->addDebug('Done setting up ORM');
     }
 
     private function setupRouting($controllers = null) {
+      $this->logger->addDebug('Registering routes', $controllers);
         if($this->klein == null){
             $this->klein = new Klein();
         }
@@ -64,9 +68,11 @@ class ApiServer {
         } elseif ($controllers != null) {
             $this->klein->with("/$controllers", __DIR__."/../../controllers/$controllers.php");
         }
+          $this->logger->addDebug('Registered routes', $controllers);
     }
 
     private function registerServices() {
+      $this->logger->addDebug('Registering services');
         $this->klein->respond(function($request, $response, $service, $app) {
             $app->register('logger', function() {
                 $logger = new Logger($this->config['logger']['instanceidentifier']);
@@ -77,6 +83,7 @@ class ApiServer {
                 return $logger;
             });
         });
+      $this->logger->addDebug('Registered services');
     }
 
-} 
+}

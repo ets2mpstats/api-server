@@ -1,0 +1,14 @@
+logger:
+  logpath: /var/log/app/api-server.log
+  instanceidentifier: api-server
+  level: 100
+database:
+  host: localhost
+  user: apiserver
+  pass: 123
+  name: apiserver
+  port: 3306
+memcache:
+  enabled: false
+  host: localhost
+  port: 11211
